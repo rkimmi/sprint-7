@@ -4,7 +4,10 @@ The previous chapter introduced the standard function Math.min that returns its 
 We can do that ourselves now. Write a function min that takes two arguments and returns their minimum.
 */
 
-// Your code here.
+function min(a, b) {
+  return Math.min(a, b);
+
+}; // Your code here.
 console.log(min(0, 10));
 // → 0
 console.log(min(0, -10));
@@ -28,7 +31,16 @@ a number parameter and return a Boolean.
 Test it on 50 and 75. See how it behaves on -1. Why? Can you think of a way to fix this?
 */
 
-// Your code here.
+var isEven = function testEven(x) {
+ if (x % 2 === 0) // if zero when % 2, true
+   return true;
+  else if (x % 2 === 1) // if one when % 2, false
+    return false;
+  else isEven(x - 2); // final case -> recursive call!!
+    return true;
+
+  };
+
 console.log(isEven(50));
 // → true
 console.log(isEven(75));
@@ -52,7 +64,26 @@ the character that is to be counted (rather than counting only uppercase “B”
 this new function.
 */
 
-// Your code here.
+function countBs(pString) {
+  var rCount = 0;
+  for (i=0; i < pString.length; i++) {
+    if (pString[i] == 'B') {
+      rCount++; // rCount = rCount + 1
+    }
+  }
+  return rCount;
+}
+
+function countChar(pString, pChar) {
+  var rCount = 0;
+  for (i=0; i < pString.length; i++) {
+    if (pString[i] == pChar) {
+      rCount++; // rCount = rCount + 1
+    }
+  }
+  return rCount;
+}
+
 console.log(countBs("BBC"));
 // → 2
 console.log(countChar("kakkerlak", "k"));
